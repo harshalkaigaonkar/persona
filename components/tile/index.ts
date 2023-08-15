@@ -1,2 +1,2 @@
-import ProjectTile from "./ProjectTile";
-export default ProjectTile;
+import MainTile from "./MainTile/MainTile";
+export default MainTile;
