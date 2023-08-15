@@ -1,7 +1,8 @@
+import React from "react";
 import { Link } from "../MainTile/types";
 
 export interface TileContainerProps {
-    children: JSX.Element;
+    children: React.ReactNode;
     className?: string;
     onClick?: (redirect_link?: Link) => void;
 }

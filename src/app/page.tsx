@@ -1,4 +1,4 @@
-import MainTile from 'components/tile';
+'use client';
 import data from 'config.json';
 import Image from 'next/image';
 
@@ -22,7 +22,6 @@ export default function Home() {
             {data.about}
           </h3>
         </div>
-        <MainTile />
       </main>
     </>
   );

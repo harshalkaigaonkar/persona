@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { TagsProps } from '../Tags/types';
@@ -7,12 +8,13 @@ import { CTA, Link, MainTileProps } from './types';
 
 const MainTile: React.FC<MainTileProps> = ({
   header,
-  cta: { url, content },
+  cta,
   desc,
   tags,
   links,
   media_link,
 }) => {
+  const { url, content } = cta;
   const router = useRouter();
   const onRedirectHandler = (redirect_link: Link = url) => {
     const { external, link } = redirect_link;
@@ -26,16 +28,16 @@ const MainTile: React.FC<MainTileProps> = ({
     <TileContainer onClick={onRedirectHandler}>
       <>
         {/* Button Abs Content  */}
-        <div className="absolute top-10 right-10">
+        <div className="absolute top-10 right-10 w-12">
           <button
             name={typeof content === 'string' ? content : `icon`}
             onClick={() => {}}
           >
-            <span>{content}</span>
+            {content}
           </button>
         </div>
         {/* Main Content Relative  */}
-        <div>
+        <div className="relative bg-white">
           <h1>{header}</h1>
           {!!desc && <p>{desc}</p>}
           {!!tags && (
@@ -48,6 +50,7 @@ const MainTile: React.FC<MainTileProps> = ({
                         ? tag_content
                         : `icon_${index}`
                     }
+                    key={index}
                   >
                     {tag_content}
                   </button>
@@ -78,6 +81,14 @@ const MainTile: React.FC<MainTileProps> = ({
                 ),
               )}
             </div>
+          )}
+          {!!media_link && (
+            <Image
+              src={media_link}
+              alt={`${header}_media`}
+              width={100}
+              height={200}
+            />
           )}
         </div>
       </>
