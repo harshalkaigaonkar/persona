@@ -1,11 +1,13 @@
 'use client';
-import data from 'config.json';
+import { MainTile } from 'components/main-tile';
+import data from 'config.js';
 import Image from 'next/image';
+import { UTileType } from './types';
 
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="w-full h-full">
         <div className="mt-20 w-auto flex flex-col items-center ">
           <div className="flex">
             <Image
@@ -18,9 +20,28 @@ export default function Home() {
             />
           </div>
           <h1 className="my-4 text-3xl font-bold">{data.name}</h1>
-          <h3 className="w-[50%] text-center my-2 text-sm font-semibold">
+          <h3 className="w-[50%] text-center my-2 text-sm font-medium text-">
             {data.about}
           </h3>
+          <div className="p-10 w-full max-w-[80%] h-full flex flex-wrap justify-evenly items-stretch">
+            {data.sections.map(({ type, data }: any, index: number) => {
+              if (type === UTileType.MAINTILE) {
+                return (
+                  <MainTile
+                    key={index}
+                    header={data.header}
+                    cta={data.cta}
+                    desc={data.desc}
+                    tags={data.tags}
+                    links={data.links}
+                    media_link={data.media_link}
+                  />
+                );
+              } else {
+                return <></>;
+              }
+            })}
+          </div>
         </div>
       </main>
     </>

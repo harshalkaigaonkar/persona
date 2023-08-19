@@ -1,6 +1,7 @@
-import { TagsProps } from "../Tags/types";
+import { TagsProps } from "./Tags/types";
 
 export interface MainTileProps {
+    key: number;
     header: string;
     cta: CTA;
     desc?: string;
