@@ -1,20 +1,16 @@
 'use client';
 import Links from 'components/links/Links';
-import Tag from 'components/tags/Tag';
-import Image from 'next/image';
+import { CTA, Link } from 'components/main-tile/types';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import { Tags } from '../tags/types';
-import { CTA, Link, MainTileProps } from './types';
+import { SocialTileProps } from './types';
 
-const MainTile: React.FC<MainTileProps> = ({
+const SocialTile: React.FC<SocialTileProps> = ({
   key,
   header,
   cta,
   desc,
-  tags,
   links,
-  media_link,
 }) => {
   const { url, content } = cta;
   const router = useRouter();
@@ -92,13 +88,6 @@ const MainTile: React.FC<MainTileProps> = ({
             {getDescComponent(desc)}
           </p>
         )}
-        {!!tags && (
-          <div className="flex flex-wrap items-center gap-2">
-            {tags.map(({ tag_content }: Tags, index: number) => (
-              <Tag {...{ tag_content, key: index }} />
-            ))}
-          </div>
-        )}
         {!!links && (
           <div className="my-4 flex flex-wrap items-center gap-3">
             {links.map(
@@ -118,20 +107,9 @@ const MainTile: React.FC<MainTileProps> = ({
             )}
           </div>
         )}
-        {!!media_link && (
-          <div className="w-full h-full mt-4 overflow-l-hidden">
-            <Image
-              src={media_link}
-              alt={`${header}_media`}
-              width={500}
-              height={600}
-              objectFit="cover"
-            />
-          </div>
-        )}
       </div>
     </div>
   );
 };
 
-export default MainTile;
+export default SocialTile;

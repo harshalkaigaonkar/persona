@@ -22,6 +22,8 @@ const Links = ({
         <FigmaSvg />
       ) : attached_url?.icon === 'github' ? (
         <GithubSvg />
+      ) : attached_url?.icon === 'twitter' ? (
+        <img className="w-6 h-6 rounded-md" src="/x.png" alt="twitter_x" />
       ) : (
         <></>
       )}

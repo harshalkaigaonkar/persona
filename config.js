@@ -54,7 +54,7 @@ const data = {
       },
     },
     {
-      type: UTileType.MAINTILE,
+      type: UTileType.SOCIALTILE,
       data: {
         header: 'Twitter',
         cta: {
@@ -64,6 +64,17 @@ const data = {
           },
           content: 'Say hi',
         },
+        desc: '21 | frontend @wearezuddl',
+        links: [
+          {
+            url: {
+              link: 'https://dub.sh/donotopen',
+              external: true,
+              icon: 'twitter',
+            },
+            content: '@Hkking31',
+          },
+        ],
       },
     },
   ],
