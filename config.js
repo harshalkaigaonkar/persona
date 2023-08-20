@@ -37,6 +37,7 @@ const data = {
             url: {
               link: 'https://dub.sh/fplay',
               external: true,
+              icon: 'github',
             },
             content: 'Github',
           },
@@ -44,6 +45,7 @@ const data = {
             url: {
               link: 'https://www.figma.com/file/OAxCz90B9EPk3dyXltd00w/Fplay?type=design&t=HjVLzVAZa3RssMtv-6',
               external: true,
+              icon: 'figma',
             },
             content: 'Figma',
           },

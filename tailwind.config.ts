@@ -15,8 +15,11 @@ const config: Config = {
       },
       colors: {
         'high': 'rgb(0, 0, 0)',
+        'contrast-1': 'rgb(255 255 255 / 0.7)',
+        'contrast-2': 'rgb(255 255 255 / 0.2)',
         'base-1': 'rgb(32, 32, 32)',
         'base-2': 'rgb(255 255 255 / 0.3)',
+        'base-3': 'rgb(255 255 255 / 0.1)',
         'primary': 'rgb(146, 228, 112)'
       }
     },

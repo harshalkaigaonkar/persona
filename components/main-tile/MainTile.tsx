@@ -1,8 +1,10 @@
 'use client';
+import Links from 'components/links/Links';
+import Tag from 'components/tags/Tag';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import { TagsProps } from './Tags/types';
+import { Tags } from '../tags/types';
 import { CTA, Link, MainTileProps } from './types';
 
 const MainTile: React.FC<MainTileProps> = ({
@@ -19,7 +21,7 @@ const MainTile: React.FC<MainTileProps> = ({
   const onRedirectHandler = (redirect_link: Link = url) => {
     const { external, link } = redirect_link;
     if (external) {
-      window.location.href = link;
+      window.open(link, '_blank');
     } else {
       router.push(link);
     }
@@ -37,8 +39,10 @@ const MainTile: React.FC<MainTileProps> = ({
   return (
     <div
       key={key}
-      className="group relative my-2 p-5 w-[46%] h-auto bg-base-1 border border-base-2 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2"
-      onClick={() => onRedirectHandler}
+      className="group relative overflow-hidden my-2 p-5 w-[46%] h-auto bg-base-1 border border-base-3 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2"
+      onClick={() => {
+        onRedirectHandler();
+      }}
     >
       {/* Button Abs Content  */}
       <div className="absolute top-3.5 right-4">
@@ -49,7 +53,6 @@ const MainTile: React.FC<MainTileProps> = ({
         >
           <p className="text-sm font-medium">{content}</p>
           {typeof content === 'string' && (
-            // top-right-arrow svg
             <>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,12 +65,14 @@ const MainTile: React.FC<MainTileProps> = ({
                 } group-hover:translate-x-[0.125rem] transition duration-100`}
               >
                 {url?.external ? (
+                  // top-right-arrow svg
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                   />
                 ) : (
+                  // right-arrow svg
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -88,54 +93,41 @@ const MainTile: React.FC<MainTileProps> = ({
           </p>
         )}
         {!!tags && (
-          <div>
-            {tags.map(({ tag_content }: TagsProps, index: number) => (
-              <>
-                <button
-                  name={
-                    typeof tag_content === 'string'
-                      ? tag_content
-                      : `icon_${index}`
-                  }
-                  key={index}
-                >
-                  {tag_content}
-                </button>
-              </>
+          <div className="flex flex-wrap items-center gap-2">
+            {tags.map(({ tag_content }: Tags, index: number) => (
+              <Tag {...{ tag_content, key: index }} />
             ))}
           </div>
         )}
         {!!links && (
-          <div>
+          <div className="my-4 flex flex-wrap items-center gap-3">
             {links.map(
               (
-                { url: attachedUrl, content: attachedContent }: CTA,
+                { url: attached_url, content: attached_content }: CTA,
                 index: number,
               ) => (
-                <>
-                  <button
-                    name={
-                      typeof attachedContent === 'string'
-                        ? attachedContent
-                        : `icon_${index}`
-                    }
-                    key={index}
-                    onClick={() => onRedirectHandler(attachedUrl)}
-                  >
-                    {attachedContent}
-                  </button>
-                </>
+                <Links
+                  {...{
+                    attached_url,
+                    attached_content,
+                    index,
+                    onRedirectHandler,
+                  }}
+                />
               ),
             )}
           </div>
         )}
         {!!media_link && (
-          <Image
-            src={media_link}
-            alt={`${header}_media`}
-            width={100}
-            height={200}
-          />
+          <div className="w-full h-full mt-4 overflow-l-hidden">
+            <Image
+              src={media_link}
+              alt={`${header}_media`}
+              width={500}
+              height={600}
+              objectFit="cover"
+            />
+          </div>
         )}
       </div>
     </div>

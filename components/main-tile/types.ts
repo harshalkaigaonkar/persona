@@ -1,11 +1,11 @@
-import { TagsProps } from "./Tags/types";
+import { Tags } from "../tags/types";
 
 export interface MainTileProps {
     key: number;
     header: string;
     cta: CTA;
     desc?: string;
-    tags?: TagsProps[];
+    tags?: Tags[];
     links?: CTA[];
     media_link?: string; 
 }
@@ -18,4 +18,5 @@ export interface CTA {
 export interface Link {
     external: boolean;
     link: string;
+    icon?: 'figma'|'github'|'mail'|'twitter'|'live';
 }
