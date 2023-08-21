@@ -6,15 +6,11 @@ import GithubSvg from 'components/svgs/github';
 const Links = ({
   attached_url,
   attached_content,
-  key,
   onRedirectHandler,
 }: LinkProps) => {
   return (
     <button
-      name={
-        typeof attached_content === 'string' ? attached_content : `icon_${key}`
-      }
-      key={key}
+      name={typeof attached_content === 'string' ? attached_content : `icon_`}
       onClick={() => onRedirectHandler(attached_url)}
       className="flex gap-2 text-sm border border-base-3 hover:border-primary rounded-md px-3 py-2"
     >

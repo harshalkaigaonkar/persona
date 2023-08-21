@@ -95,14 +95,15 @@ const SocialTile: React.FC<SocialTileProps> = ({
                 { url: attached_url, content: attached_content }: CTA,
                 index: number,
               ) => (
-                <Links
-                  {...{
-                    attached_url,
-                    attached_content,
-                    key: index,
-                    onRedirectHandler,
-                  }}
-                />
+                <div key={index}>
+                  <Links
+                    {...{
+                      attached_url,
+                      attached_content,
+                      onRedirectHandler,
+                    }}
+                  />
+                </div>
               ),
             )}
           </div>

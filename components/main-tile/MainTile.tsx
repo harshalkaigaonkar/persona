@@ -95,7 +95,9 @@ const MainTile: React.FC<MainTileProps> = ({
         {!!tags && (
           <div className="flex flex-wrap items-center gap-2">
             {tags.map(({ tag_content }: Tags, index: number) => (
-              <Tag {...{ tag_content, key: index }} />
+              <div key={index}>
+                <Tag {...{ tag_content }} />
+              </div>
             ))}
           </div>
         )}
@@ -106,14 +108,15 @@ const MainTile: React.FC<MainTileProps> = ({
                 { url: attached_url, content: attached_content }: CTA,
                 index: number,
               ) => (
-                <Links
-                  {...{
-                    attached_url,
-                    attached_content,
-                    key: index,
-                    onRedirectHandler,
-                  }}
-                />
+                <div key={index}>
+                  <Links
+                    {...{
+                      attached_url,
+                      attached_content,
+                      onRedirectHandler,
+                    }}
+                  />
+                </div>
               ),
             )}
           </div>
