@@ -25,7 +25,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
   const getDescComponent = (desc: string) => (
     <>
       {desc.split('\n').map((item: string, index: number) => (
-        <span>
+        <span key={index}>
           {item}
           <br />
         </span>
@@ -99,7 +99,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
                   {...{
                     attached_url,
                     attached_content,
-                    index,
+                    key: index,
                     onRedirectHandler,
                   }}
                 />

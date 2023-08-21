@@ -29,7 +29,7 @@ const MainTile: React.FC<MainTileProps> = ({
   const getDescComponent = (desc: string) => (
     <>
       {desc.split('\n').map((item: string, index: number) => (
-        <span>
+        <span key={index}>
           {item}
           <br />
         </span>
@@ -110,7 +110,7 @@ const MainTile: React.FC<MainTileProps> = ({
                   {...{
                     attached_url,
                     attached_content,
-                    index,
+                    key: index,
                     onRedirectHandler,
                   }}
                 />
