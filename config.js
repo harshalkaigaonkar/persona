@@ -17,7 +17,7 @@ const data = {
           },
           content: 'Github',
         },
-        desc: 'listen music in a group realtime. ✨✨ \n Users can create a group, queue up the songs they want to play in a room and jam. \n fun part! this is happening all in realtime sync.',
+        desc: 'listen music in a group realtime. ✨✨ \n just create a group, queue up some songs and jam.',
         tags: [
           {
             tag_content: 'Music 🎵',
@@ -73,6 +73,30 @@ const data = {
               icon: 'twitter',
             },
             content: '@Hkking31',
+          },
+        ],
+      },
+    },
+    {
+      type: UTileType.SOCIALTILE,
+      data: {
+        header: 'Github',
+        cta: {
+          url: {
+            link: 'https://dub.sh/donotopen',
+            external: true,
+          },
+          content: 'view OG Prs',
+        },
+        desc: 'krte kuch.',
+        links: [
+          {
+            url: {
+              link: 'https://dub.sh/hk-gh',
+              external: true,
+              icon: 'github',
+            },
+            content: '@harshalkaigaonkar',
           },
         ],
       },
