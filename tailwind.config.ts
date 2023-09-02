@@ -14,13 +14,16 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'high': 'rgb(0, 0, 0)',
-        'contrast-1': 'rgb(255 255 255 / 0.7)',
-        'contrast-2': 'rgb(255 255 255 / 0.2)',
-        'base-1': 'rgb(32, 32, 32)',
-        'base-2': 'rgb(255 255 255 / 0.3)',
-        'base-3': 'rgb(255 255 255 / 0.1)',
-        'primary': 'rgb(146, 228, 112)'
+        'foreground-bg': 'rgb(var(--foreground-bg))',
+        'background-start-bg': 'rgb(var(--background-start-bg))',
+        'background-end-bg': 'rgb(var(--background-end-bg))',
+        'high': 'rgb(var(--text-high))',
+        'contrast-1': 'rgb(var(--mono-contrast-1))',
+        'contrast-2': 'rgb(var(--mono-contrast-2))',
+        'base-1': 'rgb(var(--mono-base-1))',
+        'base-2': 'rgb(var(--mono-base-2))',
+        'base-3': 'rgb(var(--mono-base-3))',
+        'primary': 'rgb(var(--primary))'
       }
     },
   },

@@ -2,7 +2,8 @@
 import Links from 'components/links/Links';
 import { CTA, Link } from 'components/main-tile/types';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useMemo } from 'react';
+import { getTwitterInfo } from './config';
 import { SocialTileProps } from './types';
 
 const SocialTile: React.FC<SocialTileProps> = ({
@@ -12,6 +13,9 @@ const SocialTile: React.FC<SocialTileProps> = ({
   desc,
   links,
 }) => {
+  // const twitterInfo = useMemo(async () => await getTwitterInfo(), []);
+  // console.log(twitterInfo, 'twitterInfo');
+
   const { url, content } = cta;
   const router = useRouter();
   const onRedirectHandler = (redirect_link: Link = url) => {
@@ -47,7 +51,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
           onClick={() => {}}
           className="inline-flex justify-center items-center gap-1 bg-primary px-4 py-2 text-high rounded-md"
         >
-          <p className="text-sm font-medium">{content}</p>
+          <p className="text-sm font-medium text-black">{content}</p>
           {typeof content === 'string' && (
             <>
               <svg
@@ -56,7 +60,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
                 viewBox="0 0 25 25"
                 strokeWidth={2.5}
                 stroke="currentColor"
-                className={`w-4 h-4 ${
+                className={`w-4 h-4 text-black ${
                   !!url?.external && 'group-hover:-translate-y-[0.125rem]'
                 } group-hover:translate-x-[0.125rem] transition duration-100`}
               >
@@ -82,7 +86,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
       </div>
       {/* Main Content Relative  */}
       <div className="h-full">
-        <h1 className="my-1 font-semibold text-lg">{header}</h1>
+        <h1 className="my-1 font-semibold text-lg text-high">{header}</h1>
         {!!desc && (
           <p className="w-[70%] my-5 text-sm text-base-2">
             {getDescComponent(desc)}

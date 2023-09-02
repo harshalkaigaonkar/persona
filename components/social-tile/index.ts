@@ -1,2 +1,2 @@
 import SocialTile from "./SocialTile";
-export{SocialTile}
+export { SocialTile }
