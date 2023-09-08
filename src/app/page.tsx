@@ -6,6 +6,7 @@ import data from 'config';
 import Image from 'next/image';
 import { UFrameType, UTileType } from './types';
 import { uuid } from 'uuidv4';
+import React from 'react';
 
 export default function Home() {
   function tileDistribution(tileType: any, data: any) {
@@ -41,8 +42,10 @@ export default function Home() {
       <FullFrame wrap>
         {!data.tileType ? (
           <>
-            {data.map(({ frameType, data }: any) => (
-              <>{frameDistribution(frameType, data)}</>
+            {data.map(({ frameType, data }: any, index: number) => (
+              <React.Fragment key={index}>
+                {frameDistribution(frameType, data)}
+              </React.Fragment>
             ))}
           </>
         ) : (
@@ -53,8 +56,10 @@ export default function Home() {
       <HalfHeightFrame flex="col">
         {!data.tileType ? (
           <>
-            {data.map(({ frameType, data }: any) => (
-              <>{frameDistribution(frameType, data)}</>
+            {data.map(({ frameType, data }: any, index: number) => (
+              <React.Fragment key={index}>
+                {frameDistribution(frameType, data)}
+              </React.Fragment>
             ))}
           </>
         ) : (
@@ -65,8 +70,10 @@ export default function Home() {
       <HalfHeightFrame flex="row">
         {!data.tileType ? (
           <>
-            {data.map(({ frameType, data }: any) => (
-              <>{frameDistribution(frameType, data)}</>
+            {data.map(({ frameType, data }: any, index: number) => (
+              <React.Fragment key={index}>
+                {frameDistribution(frameType, data)}
+              </React.Fragment>
             ))}
           </>
         ) : (
@@ -77,8 +84,10 @@ export default function Home() {
       <HalfWidthFrame flex="col">
         {!data.tileType ? (
           <>
-            {data.map(({ frameType, data }: any) => (
-              <>{frameDistribution(frameType, data)}</>
+            {data.map(({ frameType, data }: any, index: number) => (
+              <React.Fragment key={index}>
+                {frameDistribution(frameType, data)}
+              </React.Fragment>
             ))}
           </>
         ) : (
@@ -90,8 +99,10 @@ export default function Home() {
         <HalfWidthFrame flex="row">
           {!data.tileType ? (
             <>
-              {data.map(({ frameType, data }: any) => (
-                <>{frameDistribution(frameType, data)}</>
+              {data.map(({ frameType, data }: any, index: number) => (
+                <React.Fragment key={index}>
+                  {frameDistribution(frameType, data)}
+                </React.Fragment>
               ))}
             </>
           ) : (
@@ -120,10 +131,12 @@ export default function Home() {
             {data.about}
           </h3>
           <div className="p-1 md:p-10 w-full max-w-[80%] h-full flex flex-col md:flex-row flex-wrap md:flex-nowrap justify-evenly items-start">
-            {data.frames.map(({ frameType, data }: any) => (
-              <FullFrame wrap>
-                <>{frameDistribution(frameType, data)}</>
-              </FullFrame>
+            {data.frames.map(({ frameType, data }: any, index: number) => (
+              <React.Fragment key={index}>
+                <FullFrame wrap>
+                  <>{frameDistribution(frameType, data)}</>
+                </FullFrame>
+              </React.Fragment>
             ))}
           </div>
         </div>
