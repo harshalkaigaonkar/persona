@@ -1,7 +1,7 @@
 import { Tags } from "../tags/types";
 
 export interface MainTileProps {
-    key: number;
+    key: string|number;
     header: string;
     cta: CTA;
     desc?: string;

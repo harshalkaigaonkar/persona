@@ -1,2 +1,2 @@
 import MainTile from "./MainTile";
-export  {MainTile};
+export  { MainTile };

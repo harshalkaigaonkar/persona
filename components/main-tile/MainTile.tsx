@@ -18,7 +18,12 @@ const MainTile: React.FC<MainTileProps> = ({
 }) => {
   const { url, content } = cta;
   const router = useRouter();
-  const onRedirectHandler = (redirect_link: Link = url) => {
+  const onRedirectHandler = (
+    e: React.SyntheticEvent<HTMLButtonElement>,
+    redirect_link: Link = url,
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
     const { external, link } = redirect_link;
     if (external) {
       window.open(link, '_blank');
@@ -39,9 +44,9 @@ const MainTile: React.FC<MainTileProps> = ({
   return (
     <div
       key={key}
-      className="group relative overflow-hidden my-2 p-5 w-full md:w-[46%]  h-auto bg-base-1 border border-base-3 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2"
-      onClick={() => {
-        onRedirectHandler();
+      className="group relative overflow-hidden my-2 p-5 w-full h-auto bg-base-1 border border-base-3 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2"
+      onClick={(e: any) => {
+        onRedirectHandler(e);
       }}
     >
       {/* Button Abs Content  */}

@@ -1,11 +1,106 @@
 'use client';
+import { FullFrame, HalfHeightFrame, HalfWidthFrame } from 'components/frame';
 import { MainTile } from 'components/main-tile';
 import { SocialTile } from 'components/social-tile';
-import data from 'config.js';
+import data from 'config';
 import Image from 'next/image';
-import { UTileType } from './types';
+import { UFrameType, UTileType } from './types';
+import { uuid } from 'uuidv4';
 
 export default function Home() {
+  function tileDistribution(tileType: any, data: any) {
+    return tileType === UTileType.MAINTILE ? (
+      <>
+        <MainTile
+          key={uuid()}
+          header={data.header}
+          cta={data.cta}
+          desc={data.desc}
+          tags={data.tags}
+          links={data.links}
+          media_link={data.media_link}
+        />
+      </>
+    ) : tileType === UTileType.SOCIALTILE ? (
+      <>
+        <SocialTile
+          key={uuid()}
+          header={data.header}
+          cta={data.cta}
+          desc={data.desc}
+          links={data.links}
+        />
+      </>
+    ) : (
+      tileType === UTileType.LISTTILE && <></>
+    );
+  }
+
+  function frameDistribution(frameType: any, data: any) {
+    return frameType === UFrameType.FULLFRAME ? (
+      <FullFrame wrap>
+        {!data.tileType ? (
+          <>
+            {data.map(({ frameType, data }: any) => (
+              <>{frameDistribution(frameType, data)}</>
+            ))}
+          </>
+        ) : (
+          <>{tileDistribution(data.tileType, data.data)}</>
+        )}
+      </FullFrame>
+    ) : frameType === UFrameType.HALFHEIGHTFRAMEWITHCOL ? (
+      <HalfHeightFrame flex="col">
+        {!data.tileType ? (
+          <>
+            {data.map(({ frameType, data }: any) => (
+              <>{frameDistribution(frameType, data)}</>
+            ))}
+          </>
+        ) : (
+          <>{tileDistribution(data.tileType, data.data)}</>
+        )}
+      </HalfHeightFrame>
+    ) : frameType === UFrameType.HALFHEIGHTFRAMEWITHROW ? (
+      <HalfHeightFrame flex="row">
+        {!data.tileType ? (
+          <>
+            {data.map(({ frameType, data }: any) => (
+              <>{frameDistribution(frameType, data)}</>
+            ))}
+          </>
+        ) : (
+          <>{tileDistribution(data.tileType, data.data)}</>
+        )}
+      </HalfHeightFrame>
+    ) : frameType === UFrameType.HALFWIDTHFRAMEWITHCOL ? (
+      <HalfWidthFrame flex="col">
+        {!data.tileType ? (
+          <>
+            {data.map(({ frameType, data }: any) => (
+              <>{frameDistribution(frameType, data)}</>
+            ))}
+          </>
+        ) : (
+          <>{tileDistribution(data.tileType, data.data)}</>
+        )}
+      </HalfWidthFrame>
+    ) : (
+      frameType === UFrameType.HALFWIDTHFRAMEWITHROW && (
+        <HalfWidthFrame flex="row">
+          {!data.tileType ? (
+            <>
+              {data.map(({ frameType, data }: any) => (
+                <>{frameDistribution(frameType, data)}</>
+              ))}
+            </>
+          ) : (
+            <>{tileDistribution(data.tileType, data.data)}</>
+          )}
+        </HalfWidthFrame>
+      )
+    );
+  }
   return (
     <>
       <main className="w-full h-full">
@@ -24,34 +119,12 @@ export default function Home() {
           <h3 className="w-[50%] text-center my-2 text-sm font-medium text-high">
             {data.about}
           </h3>
-          <div className="p-1 md:p-10 w-full max-w-[80%] h-full flex flex-col md:flex-row flex-wrap justify-evenly items-start">
-            {data.sections.map(({ type, data }: any, index: number) => {
-              if (type === UTileType.MAINTILE) {
-                return (
-                  <MainTile
-                    key={index}
-                    header={data.header}
-                    cta={data.cta}
-                    desc={data.desc}
-                    tags={data.tags}
-                    links={data.links}
-                    media_link={data.media_link}
-                  />
-                );
-              } else if (type === UTileType.SOCIALTILE) {
-                return (
-                  <SocialTile
-                    key={index}
-                    header={data.header}
-                    cta={data.cta}
-                    desc={data.desc}
-                    links={data.links}
-                  />
-                );
-              } else {
-                return <></>;
-              }
-            })}
+          <div className="p-1 md:p-10 w-full max-w-[80%] h-full flex flex-col md:flex-row flex-wrap md:flex-nowrap justify-evenly items-start">
+            {data.frames.map(({ frameType, data }: any) => (
+              <FullFrame wrap>
+                <>{frameDistribution(frameType, data)}</>
+              </FullFrame>
+            ))}
           </div>
         </div>
       </main>
