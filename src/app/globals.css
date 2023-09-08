@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  /* Right Now, keeping def as dark theme for staging */
+
+  /* Light Theme colors */
+  /* :root {
     --foreground-bg: 0, 0, 0;
     --background-start-bg: 214, 219, 220;
     --background-end-bg: 255, 255, 255;
@@ -13,6 +16,19 @@
     --mono-base-1: 255 255 255;
     --mono-base-2: 0 0 0 / 0.3;
     --mono-base-3: 0 0 0 / 0.1;
+    --primary: 146, 228, 11;
+  } */
+
+  :root {
+    --foreground-bg: 0, 0, 0;
+    --background-start-bg: 0 0 0;
+    --background-end-bg: 0 0 0;
+    --text-high: 255 255 255;
+    --mono-contrast-1: 255 255 255 / 0.7;
+    --mono-contrast-2: 255 255 255 / 0.2;
+    --mono-base-1: 32, 32, 32;
+    --mono-base-2: 255 255 255 / 0.3;
+    --mono-base-3: 255 255 255 / 0.1;
     --primary: 146, 228, 11;
   }
   @media (prefers-color-scheme: dark) {
