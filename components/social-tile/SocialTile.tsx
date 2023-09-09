@@ -2,7 +2,7 @@
 import Links from 'components/links/Links';
 import { CTA, Link } from 'components/main-tile/types';
 import { useRouter } from 'next/navigation';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { getTwitterInfo } from './config';
 import { SocialTileProps } from './types';
 
@@ -13,7 +13,22 @@ const SocialTile: React.FC<SocialTileProps> = ({
   desc,
   links,
 }) => {
-  // const twitterInfo = useMemo(async () => await getTwitterInfo(), []);
+  // not working, will try later
+
+  // const [twitterInfo, setTwitterInfo] = useState();
+  // useEffect(() => {
+  //   (async () => {
+  //     await getTwitterInfo()
+  //       .then((res) => {
+  //         setTwitterInfo(res.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err, 'err');
+  //         return err;
+  //       });
+  //   })();
+  // }, [twitterInfo]);
+
   // console.log(twitterInfo, 'twitterInfo');
 
   const { url, content } = cta;
