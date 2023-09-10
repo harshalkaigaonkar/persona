@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -18,6 +18,7 @@ const config: Config = {
         'background-start-bg': 'rgb(var(--background-start-bg))',
         'background-end-bg': 'rgb(var(--background-end-bg))',
         'high': 'rgb(var(--text-high))',
+        'medium': 'rgb(var(--text-medium))',
         'contrast-1': 'rgb(var(--mono-contrast-1))',
         'contrast-2': 'rgb(var(--mono-contrast-2))',
         'base-1': 'rgb(var(--mono-base-1))',

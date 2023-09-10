@@ -14,11 +14,10 @@ const useIsDarkMode = () => {
       setIsDark(true);
       return;
     }
-    if (document.documentElement && !!lsTheme) {
-      document.documentElement?.setAttribute(
-        'data-theme',
-        lsTheme === 'light' ? 'dark' : 'light',
-      );
+    if (document.documentElement && localStorage && !!lsTheme) {
+      const invertedTheme = lsTheme === 'light' ? 'dark' : 'light';
+      document.documentElement?.setAttribute('data-theme', invertedTheme);
+      localStorage.setItem('data-theme', invertedTheme);
       setIsDark(lsTheme === 'dark');
       return;
     }

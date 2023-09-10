@@ -4,7 +4,7 @@ export default {
   name: 'Harshal Kaigaonkar',
   profile_img: '/Harshal.jpg',
   about:
-    'Web fanatic 🧑‍💻. Music aficionado 🎼. Audiophile 🎧. Unapologetic introvert 😮. Incurable coffee fan ☕️. General beer enthusiast 🍺.',
+    'Web fanatic 🧑‍💻 . Music aficionado 🎼 . Audiophile 🎧 . Unapologetic introvert 😮 . Incurable coffee fan ☕️ . General beer enthusiast 🍺 .',
   frames: [
     {
       frameType: UFrameType.FULLFRAME,

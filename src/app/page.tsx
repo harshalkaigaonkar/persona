@@ -128,7 +128,7 @@ export default function Home() {
             />
           </div>
           <h1 className="my-4 text-3xl font-bold text-high">{data.name}</h1>
-          <h3 className="w-[50%] text-center my-2 text-sm font-medium text-high">
+          <h3 className="w-[50%] text-center my-2 text-sm font-medium text-medium">
             {data.about}
           </h3>
           <div className="p-1 lg:p-10 md:p-8 w-full max-w-[90%] md:max-w-[80%] h-full flex flex-col md:flex-row flex-wrap md:flex-nowrap justify-evenly items-start">
