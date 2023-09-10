@@ -1,4 +1,5 @@
-import { CTA } from "components/main-tile/types";
+import { CTA } from "components/frame/card-frame/types";
+
 
 export interface SocialTileProps {
     key: number|string;

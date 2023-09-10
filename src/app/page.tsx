@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { UFrameType, UTileType } from './types';
 import { uuid } from 'uuidv4';
 import React from 'react';
+import Header from 'components/header';
+import { ListTile } from 'components/list-tile';
 
 export default function Home() {
   function tileDistribution(tileType: any, data: any) {
@@ -33,7 +35,17 @@ export default function Home() {
         />
       </>
     ) : (
-      tileType === UTileType.LISTTILE && <></>
+      tileType === UTileType.LISTTILE && (
+        <>
+          <ListTile
+            key={uuid()}
+            header={data.header}
+            desc={data.desc}
+            cta={data.cta}
+            list={data.list_array}
+          />
+        </>
+      )
     );
   }
 
@@ -115,22 +127,24 @@ export default function Home() {
   return (
     <>
       <main className="w-full h-full">
-        <div className="mt-20 w-auto flex flex-col items-center ">
-          <div className="flex">
+        <div className="mt-10 w-auto flex flex-col items-center ">
+          <div className="flex justify-center items-center w-28 h-28 rounded-xl">
             <Image
               src={data.profile_img}
               alt={data.name}
-              objectFit={'cover'}
+              objectFit={'contain'}
               width={120}
               height={120}
-              className="rounded-xl border border-whitesmoke"
+              className="rounded-xl border border-high/50"
             />
           </div>
-          <h1 className="my-4 text-3xl font-bold text-high">{data.name}</h1>
-          <h3 className="w-[50%] text-center my-2 text-sm font-medium text-high">
+          <h1 className="my-4 text-2xl md:text-3xl font-bold text-high">
+            {data.name}
+          </h1>
+          <h3 className="w-[90%] md:w-[50%] text-center my-2 text-xs md:text-sm font-medium text-medium">
             {data.about}
           </h3>
-          <div className="p-1 md:p-10 w-full max-w-[80%] h-full flex flex-col md:flex-row flex-wrap md:flex-nowrap justify-evenly items-start">
+          <div className="mt-2 p-1 lg:p-10 md:p-8 w-full max-w-[90%] md:max-w-[80%] h-full flex flex-col md:flex-row flex-wrap justify-evenly items-start gap-4">
             {data.frames.map(({ frameType, data }: any, index: number) => (
               <React.Fragment key={index}>
                 <FullFrame wrap>

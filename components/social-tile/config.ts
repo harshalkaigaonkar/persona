@@ -1,20 +1,10 @@
-const axios = require('axios');
+import axios from 'axios';
 
-export const getTwitterInfo = () => {
-
-let config = {
-  method: 'get',
-  maxBodyLength: Infinity,
-  url: 'https://api.twitter.com/1.1/users/show.json?screen_name=hkking31',
-  headers: { 
-    'Authorization': `Bearer ${process.env.TWITTER_BEARER_TOKEN}`, 
-  }
-};
-
-return axios.request(config)
-.then((response: any) => response.data)
-.catch((error: any) => {
-  console.log(error);
-});
-
+export const getTwitterInfo = async () => {
+  const res = await axios.get('https://api.twitter.com/1.1/users/show.json?screen_name=hkking31', {
+    headers: {
+      'authorization': `Bearer ${process.env.TWITTER_BEARER_TOKEN}`, 
+    }
+  })
+  return res;
 }

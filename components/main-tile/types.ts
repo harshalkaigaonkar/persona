@@ -1,3 +1,4 @@
+import { CTA } from "components/frame/card-frame/types";
 import { Tags } from "../tags/types";
 
 export interface MainTileProps {
@@ -8,15 +9,4 @@ export interface MainTileProps {
     tags?: Tags[];
     links?: CTA[];
     media_link?: string; 
-}
-
-export interface CTA {
-    url: Link;
-    content: string|JSX.Element;
-}
-
-export interface Link {
-    external: boolean;
-    link: string;
-    icon?: 'figma'|'github'|'mail'|'twitter'|'live';
 }
