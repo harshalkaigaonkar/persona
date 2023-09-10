@@ -24,7 +24,7 @@ const config: Config = {
         'base-1': 'rgb(var(--mono-base-1))',
         'base-2': 'rgb(var(--mono-base-2))',
         'base-3': 'rgb(var(--mono-base-3))',
-        'primary': 'rgb(var(--primary))'
+        'primary': 'rgb(var(--primary))',
       }
     },
   },

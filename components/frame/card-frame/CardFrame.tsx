@@ -1,8 +1,23 @@
+import { Link } from 'components/links/types';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { ICardFrameProps } from './types';
 
 const CardFrame: React.FC<ICardFrameProps> = (props) => {
-  const { children, key, onRedirectHandler, cta } = props;
+  const { children, key, cta } = props;
+  const router = useRouter();
+  const onRedirectHandler = (
+    e: React.SyntheticEvent<HTMLButtonElement>,
+    redirect_link: Link | undefined = cta?.url,
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!!redirect_link?.external) {
+      window.open(redirect_link.link, '_blank');
+    } else if (!!redirect_link?.link) {
+      router.push(redirect_link?.link);
+    }
+  };
   return (
     <div
       key={key}

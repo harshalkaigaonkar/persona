@@ -4,7 +4,6 @@ import React from "react";
 export interface ICardFrameProps {
     children: JSX.Element;
     key: string|number;
-    onRedirectHandler?: Function;
     cta?: CTA;
 }
 

@@ -45,17 +45,19 @@ const MainTile: React.FC<MainTileProps> = ({
     </>
   );
   return (
-    <CardFrame key={key} cta={cta} onRedirectHandler={onRedirectHandler}>
+    <CardFrame key={key} cta={cta}>
       {/* Main Content Relative  */}
       <div className="h-full">
-        <h1 className="my-1 font-semibold text-xl text-high">{header}</h1>
+        <h1 className="my-1 font-semibold text-md md:text-xl text-high">
+          {header}
+        </h1>
         {!!desc && (
-          <p className="w-[75%] my-5 text-sm text-medium">
+          <p className="w-[75%]  my-5 text-xs md:text-sm text-medium">
             {getDescComponent(desc)}
           </p>
         )}
         {!!tags && (
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1 md:gap-2">
             {tags.map(({ tag_content }: Tags, index: number) => (
               <div key={index}>
                 <Tag {...{ tag_content }} />

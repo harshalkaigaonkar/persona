@@ -59,12 +59,14 @@ const SocialTile: React.FC<SocialTileProps> = ({
     </>
   );
   return (
-    <CardFrame key={key} cta={cta} onRedirectHandler={onRedirectHandler}>
+    <CardFrame key={key} cta={cta}>
       {/* Main Content Relative  */}
-      <div className="h-full">
-        <h1 className="my-1 font-semibold text-xl text-high">{header}</h1>
+      <div className="h-full flex flex-col">
+        <h1 className="my-1 font-semibold text-md md:text-xl text-high">
+          {header}
+        </h1>
         {!!desc && (
-          <p className="w-[70%] my-5 text-sm text-medium">
+          <p className="w-[70%] flex-1 my-5 text-xs md:text-sm text-medium">
             {getDescComponent(desc)}
           </p>
         )}
