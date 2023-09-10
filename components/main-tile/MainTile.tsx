@@ -1,12 +1,14 @@
 'use client';
 import { CardFrame } from 'components/frame/card-frame';
+import { CTA } from 'components/frame/card-frame/types';
 import Links from 'components/links/Links';
+import { Link } from 'components/links/types';
 import Tag from 'components/tags/Tag';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { Tags } from '../tags/types';
-import { CTA, Link, MainTileProps } from './types';
+import { MainTileProps } from './types';
 
 const MainTile: React.FC<MainTileProps> = ({
   key,
@@ -43,17 +45,12 @@ const MainTile: React.FC<MainTileProps> = ({
     </>
   );
   return (
-    <CardFrame
-      key={key}
-      content={content}
-      onRedirectHandler={onRedirectHandler}
-      url={url}
-    >
+    <CardFrame key={key} cta={cta} onRedirectHandler={onRedirectHandler}>
       {/* Main Content Relative  */}
       <div className="h-full">
         <h1 className="my-1 font-semibold text-xl text-high">{header}</h1>
         {!!desc && (
-          <p className="w-[75%] my-5 text-sm text-base-2">
+          <p className="w-[75%] my-5 text-sm text-medium">
             {getDescComponent(desc)}
           </p>
         )}

@@ -14,13 +14,13 @@ const useIsDarkMode = () => {
       setIsDark(true);
       return;
     }
-    if (document.documentElement && localStorage && !!lsTheme) {
-      const invertedTheme = lsTheme === 'light' ? 'dark' : 'light';
-      document.documentElement?.setAttribute('data-theme', invertedTheme);
-      localStorage.setItem('data-theme', invertedTheme);
-      setIsDark(lsTheme === 'dark');
-      return;
-    }
+    // if (document.documentElement && localStorage && !!lsTheme) {
+    //   const invertedTheme = lsTheme === 'light' ? 'dark' : 'light';
+    //   document.documentElement?.setAttribute('data-theme', invertedTheme);
+    //   localStorage.setItem('data-theme', invertedTheme);
+    //   setIsDark(lsTheme === 'dark');
+    //   return;
+    // }
   }, [isDark]);
   function setInvertTheme() {
     const invertedTheme = isDark ? 'light' : 'dark';

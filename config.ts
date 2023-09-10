@@ -121,5 +121,93 @@ export default {
         }
       ]
     },
+    {
+      frameType: UFrameType.FULLFRAME,
+      data: [
+        {
+          frameType: UFrameType.HALFWIDTHFRAMEWITHROW,
+          data: [
+            {
+            frameType: UFrameType.FULLFRAME,
+            data: {
+              tileType: UTileType.LISTTILE,
+              data: {
+                header: 'Experience',
+                desc: 'mostly internships ✌️',
+                cta: {
+                  url: {
+                    link: "https://www.linkedin.com/in/harshal-kaigaonkar/#experience",
+                    external: true
+                  },
+                  content: "View on LI"
+                },
+                list_array: [
+                  {
+                    icon_media_link: '/companies/zuddl-logo.png',
+                    header: "Frontend Engineering Intern",
+                    company: {
+                      name: "Zuddl",
+                      companyWebsiteUrl: "https://zuddl.com",
+                    },
+                    duration :{
+                      from: "Jul 2023",
+                      to: "Now"
+                    }
+                  },
+                  {
+                    icon_media_link: '/companies/gx-logo.svg',
+                    header: "Frontend Engineering Intern",
+                    company: {
+                      name: "GrowthX",
+                      companyWebsiteUrl: "https://growthx.club",
+                    },
+                    duration :{
+                      from: "Mar 2023",
+                      to: "Jun 2023"
+                    }
+                  },
+                  {
+                    icon_media_link: '/companies/quinn-logo.webp',
+                    header: "Software Engineering Intern",
+                    company: {
+                      name: "Quinn",
+                      companyWebsiteUrl: "https://quinn.live",
+                    },
+                    duration :{
+                      from: "Jul 2022",
+                      to: "Sep 2022"
+                    }
+                  },
+                  {
+                    icon_media_link: '/companies/symbl-logo.webp',
+                    header: "Frontend Engineering Intern",
+                    company: {
+                      name: "Symbl.ai",
+                      companyWebsiteUrl: "https://symbl.ai",
+                    },
+                    duration :{
+                      from: "Feb 2022",
+                      to: "Apr 2022"
+                    }
+                  },
+                  // {
+                  //   icon_media_link: '/projects/fplay-cover.png',
+                  //   header: "Full Stack Intern",
+                  //   company: {
+                  //     name: "Prybox Technologies",
+                  //     companyWebsiteUrl: "https://pryboxapp.com",
+                  //   },
+                  //   duration :{
+                  //     from: "Dec 2021",
+                  //     to: "Aug 2021"
+                  //   }
+                  // },
+                ]
+              }}
+          },
+        ],
+        },
+      ]
+    },
   ],
 };
