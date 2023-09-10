@@ -2,7 +2,7 @@ import useIsDarkMode from 'hooks/useIsDarkMode';
 import React from 'react';
 
 const GithubSvg = () => {
-  const isDark = useIsDarkMode();
+  const { isDark } = useIsDarkMode();
   if (isDark)
     return (
       <svg

@@ -75,7 +75,7 @@ export default {
                         link: 'https://dub.sh/donotopen',
                         external: true,
                       },
-                      content: 'Say hi',
+                      content: 'Say hi 👋',
                     },
                     desc: '21 | frontend @wearezuddl',
                     links: [
@@ -102,7 +102,7 @@ export default {
                     link: 'https://dub.sh/hk-gh',
                     external: true,
                   },
-                  content: 'view OG Prs',
+                  content: 'Check my code 🚀',
                 },
                 desc: 'krte kuch.',
                 links: [
