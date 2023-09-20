@@ -26,7 +26,7 @@ const ListTile: React.FC<ListTileProps> = (props) => {
   );
   return (
     <CardFrame key={key} cta={cta}>
-      <div className="h-full w-full">
+      <div className="h-full w-full p-5">
         <h1 className="my-1 font-semibold text-md md:text-xl text-high">
           {header}
         </h1>
