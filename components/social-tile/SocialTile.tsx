@@ -71,7 +71,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
           </p>
         )}
         {!!links && (
-          <div className="my-4 flex flex-wrap items-center gap-3">
+          <div className="my-4 flex flex-wrap items-center gap-5">
             {links.map(
               (
                 { url: attached_url, content: attached_content }: CTA,
