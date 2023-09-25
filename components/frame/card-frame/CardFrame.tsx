@@ -21,7 +21,7 @@ const CardFrame: React.FC<ICardFrameProps> = (props) => {
   return (
     <div
       key={key}
-      className="group relative overflow-hidden my-2 p-5 w-full h-auto bg-base-1 border border-base-3 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2"
+      className="group relative overflow-hidden my-2 w-full h-auto bg-base-1 border border-base-3 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2"
       onClick={(e: any) => {
         if (!!onRedirectHandler) onRedirectHandler(e);
       }}

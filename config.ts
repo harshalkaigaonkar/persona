@@ -128,6 +128,37 @@ export default {
           frameType: UFrameType.HALFWIDTHFRAMEWITHROW,
           data: [
             {
+            frameType: UFrameType.HALFHEIGHTFRAMEWITHROW,
+            data: {
+              tileType: UTileType.SOCIALTILE,
+              data: {
+                header: 'Email',
+                cta: {
+                  url: {
+                    link: 'https://dub.sh/hk-mail',
+                    external: true,
+                  },
+                  content: 'Shoot a mail',
+                },
+                desc: "Drop me an email if you like what you see! I'm currently open to meet some of the best ui developers.",
+                links: [
+                  {
+                    url: {
+                      link: 'https://dub.sh/hk-mail',
+                      external: true,
+                      icon: 'mail',
+                    },
+                    content: 'harshalkaigaonkar31@gmail.com',
+                  },
+                ],
+            }}
+          },
+        ],
+        },
+        {
+          frameType: UFrameType.HALFWIDTHFRAMEWITHROW,
+          data: [
+            {
             frameType: UFrameType.FULLFRAME,
             data: {
               tileType: UTileType.LISTTILE,
@@ -189,7 +220,7 @@ export default {
                       from: "Feb 2022",
                       to: "Apr 2022"
                     }
-                  },
+                  }
                   // {
                   //   icon_media_link: '/projects/fplay-cover.png',
                   //   header: "Full Stack Intern",

@@ -61,7 +61,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
   return (
     <CardFrame key={key} cta={cta}>
       {/* Main Content Relative  */}
-      <div className="h-full flex flex-col">
+      <div className="h-full p-5 flex flex-col">
         <h1 className="my-1 font-semibold text-md md:text-xl text-high">
           {header}
         </h1>
@@ -71,7 +71,7 @@ const SocialTile: React.FC<SocialTileProps> = ({
           </p>
         )}
         {!!links && (
-          <div className="my-4 flex flex-wrap items-center gap-3">
+          <div className="my-4 flex flex-wrap items-center gap-5">
             {links.map(
               (
                 { url: attached_url, content: attached_content }: CTA,

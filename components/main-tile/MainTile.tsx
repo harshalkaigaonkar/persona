@@ -48,43 +48,45 @@ const MainTile: React.FC<MainTileProps> = ({
     <CardFrame key={key} cta={cta}>
       {/* Main Content Relative  */}
       <div className="h-full">
-        <h1 className="my-1 font-semibold text-md md:text-xl text-high">
-          {header}
-        </h1>
-        {!!desc && (
-          <p className="w-[75%]  my-5 text-xs md:text-sm text-medium">
-            {getDescComponent(desc)}
-          </p>
-        )}
-        {!!tags && (
-          <div className="flex flex-wrap items-center gap-1 md:gap-2">
-            {tags.map(({ tag_content }: Tags, index: number) => (
-              <div key={index}>
-                <Tag {...{ tag_content }} />
-              </div>
-            ))}
-          </div>
-        )}
-        {!!links && (
-          <div className="my-4 flex flex-wrap items-center gap-3">
-            {links.map(
-              (
-                { url: attached_url, content: attached_content }: CTA,
-                index: number,
-              ) => (
+        <div className="p-5">
+          <h1 className="my-1 font-semibold text-md md:text-xl text-high">
+            {header}
+          </h1>
+          {!!desc && (
+            <p className="w-[75%]  my-5 text-xs md:text-sm text-medium">
+              {getDescComponent(desc)}
+            </p>
+          )}
+          {!!tags && (
+            <div className="flex flex-wrap items-center gap-1 md:gap-2">
+              {tags.map(({ tag_content }: Tags, index: number) => (
                 <div key={index}>
-                  <Links
-                    {...{
-                      attached_url,
-                      attached_content,
-                      onRedirectHandler,
-                    }}
-                  />
+                  <Tag {...{ tag_content }} />
                 </div>
-              ),
-            )}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+          {!!links && (
+            <div className="my-4 flex flex-wrap items-center gap-3">
+              {links.map(
+                (
+                  { url: attached_url, content: attached_content }: CTA,
+                  index: number,
+                ) => (
+                  <div key={index}>
+                    <Links
+                      {...{
+                        attached_url,
+                        attached_content,
+                        onRedirectHandler,
+                      }}
+                    />
+                  </div>
+                ),
+              )}
+            </div>
+          )}
+        </div>
         {!!media_link && (
           <div className="w-full h-full mt-4 overflow-l-hidden">
             <Image
@@ -92,7 +94,8 @@ const MainTile: React.FC<MainTileProps> = ({
               alt={`${header}_media`}
               width={500}
               height={600}
-              objectFit="cover"
+              placeholder="empty"
+              objectFit="contain"
             />
           </div>
         )}

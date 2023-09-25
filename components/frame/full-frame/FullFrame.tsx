@@ -7,7 +7,7 @@ const FullFrame: React.FC<IFullFrameProps> = (props) => {
     <div
       className={`w-full h-auto flex flex-row flex-${
         !!wrap ? 'wrap' : 'nowrap'
-      } md:flex-nowrap gap-6`}
+      } md:flex-nowrap gap-6 min-h-[565px]`}
     >
       {children}
     </div>
