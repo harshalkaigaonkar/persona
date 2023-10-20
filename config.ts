@@ -183,7 +183,8 @@ export default {
                     duration :{
                       from: "Jul 2023",
                       to: "Now"
-                    }
+                    },
+                    desc: "Responsible for maintaining and developing features and fixes for the product. \n Contributed towards maintaining and developing components for the design system."
                   },
                   {
                     icon_media_link: '/companies/gx-logo.svg',
@@ -195,7 +196,8 @@ export default {
                     duration :{
                       from: "Mar 2023",
                       to: "Jun 2023"
-                    }
+                    },
+                    desc: "Developed GrowthX Learning Experience as a feature for video-on-demand with progress tracking. \n Revamped the Onboarding Flow for Member Portal."
                   },
                   {
                     icon_media_link: '/companies/quinn-logo.webp',
@@ -207,7 +209,8 @@ export default {
                     duration :{
                       from: "Jul 2022",
                       to: "Sep 2022"
-                    }
+                    },
+                    desc: "Was part of Technical Operations and Product Development teams. \n Added optimizations on videos processing to calculate best possible vmaf scores using AWS Lambda that reduced by 200kbps."
                   },
                   {
                     icon_media_link: '/companies/symbl-logo.webp',
@@ -219,7 +222,8 @@ export default {
                     duration :{
                       from: "Feb 2022",
                       to: "Apr 2022"
-                    }
+                    },
+                    desc: "Developed an SSG Tool for Company to create documentation for their product providing better performance at scale and SEO Functionalities."
                   }
                   // {
                   //   icon_media_link: '/projects/fplay-cover.png',

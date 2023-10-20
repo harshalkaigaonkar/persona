@@ -128,22 +128,24 @@ export default function Home() {
     <>
       <main className="w-full h-full">
         <div className="mt-10 w-auto flex flex-col items-center ">
-          <div className="flex justify-center items-center w-28 h-28 rounded-xl">
-            <Image
-              src={data.profile_img}
-              alt={data.name}
-              objectFit={'contain'}
-              width={120}
-              height={120}
-              className="rounded-xl border border-high/50"
-            />
+          <div className="w-full h-30 flex flex-col justify-center items-center">
+            <div className="flex justify-center items-center w-28 h-28 rounded-xl">
+              <Image
+                src={data.profile_img}
+                alt={data.name}
+                objectFit={'contain'}
+                width={120}
+                height={120}
+                className="rounded-xl border border-high/50"
+              />
+            </div>
+            <h1 className="my-4 text-2xl md:text-3xl font-bold text-high">
+              {data.name}
+            </h1>
+            <h3 className="w-[90%] md:w-[50%] text-center my-2 text-xs md:text-sm font-medium text-medium">
+              {data.about}
+            </h3>
           </div>
-          <h1 className="my-4 text-2xl md:text-3xl font-bold text-high">
-            {data.name}
-          </h1>
-          <h3 className="w-[90%] md:w-[50%] text-center my-2 text-xs md:text-sm font-medium text-medium">
-            {data.about}
-          </h3>
           <div className="mt-2 p-1 lg:p-10 md:p-8 w-full max-w-[90%] md:max-w-[80%] h-full flex flex-col md:flex-row flex-wrap justify-evenly items-start gap-4">
             {data.frames.map(({ frameType, data }: any, index: number) => (
               <React.Fragment key={index}>

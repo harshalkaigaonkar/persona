@@ -25,6 +25,21 @@ const config: Config = {
         'base-2': 'rgb(var(--mono-base-2))',
         'base-3': 'rgb(var(--mono-base-3))',
         'primary': 'rgb(var(--primary))',
+      },
+      keyframes: { // TODO: have to check the better way to show animations
+        enter: {
+          '0%': {
+            'transform': 'translateY(1rem)',
+            'opacity': '0'
+          },
+          '100%': {
+            'transform': 'translateY(0px)',
+            'opacity': '100'
+          }
+        },
+      },
+      animation: {
+        "enter-div": "enter 0.5s linear",
       }
     },
   },
