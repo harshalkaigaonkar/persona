@@ -1,6 +1,6 @@
 import { CardFrame } from 'components/frame/card-frame';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import { ListTileProps } from './types';
 
 const ListTile: React.FC<ListTileProps> = (props) => {
@@ -38,49 +38,58 @@ const ListTile: React.FC<ListTileProps> = (props) => {
         <div className="flex flex-col items-center gap-4">
           {!!list &&
             list.map((listItem: any, index: number) => (
-              <div
-                key={index}
-                className="w-full h-auto flex flex-row flex-nowrap gap-4"
-              >
-                <div className="w-10 h-10 flex justify-center items-center rounded-md">
-                  <Image
-                    src={listItem.icon_media_link}
-                    alt={`${listItem.header}_icon`}
-                    width={30}
-                    height={30}
-                    objectFit="contain"
-                    className="rounded-md"
-                  />
-                </div>
-                <div className="w-full">
-                  <span className="flex flex-row flex-wrap items-center">
-                    <p className="font-semibold text-sm md:text-md text-high">
-                      {listItem.header}
-                      <span className="font-light text-md md:text-lg text-primary">
-                        {' '}
-                        @{' '}
-                        <span>
-                          <button
-                            className="hover:underline"
-                            onClick={(e: any) =>
-                              onButtonClickHandler(
-                                e,
-                                listItem.company.companyWebsiteUrl,
-                              )
-                            }
-                          >
-                            <span></span>
-                            {listItem.company.name}
-                          </button>
+              <React.Fragment key={index}>
+                <div className="w-full h-auto flex flex-row flex-nowrap justify-between gap-4">
+                  <div className="w-10 h-10 flex justify-center items-center rounded-md">
+                    <Image
+                      src={listItem.icon_media_link}
+                      alt={`${listItem.header}_icon`}
+                      width={30}
+                      height={30}
+                      objectFit="contain"
+                      className="rounded-md"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <span className="flex flex-row flex-wrap items-center">
+                      <p className="font-semibold text-sm md:text-md text-high">
+                        {listItem.header}
+                        <span className="font-light text-md md:text-lg text-primary">
+                          {' '}
+                          @{' '}
+                          <span>
+                            <button
+                              className="hover:underline"
+                              onClick={(e: any) =>
+                                onButtonClickHandler(
+                                  e,
+                                  listItem.company.companyWebsiteUrl,
+                                )
+                              }
+                            >
+                              <span></span>
+                              {listItem.company.name}
+                            </button>
+                          </span>
                         </span>
-                      </span>
+                      </p>
+                    </span>
+                    <p className="font-normal text-xs md:text-sm text-medium">
+                      {listItem.duration.from} - {listItem.duration.to}
                     </p>
-                  </span>
-                  <p className="font-normal text-xs md:text-sm text-medium">
-                    {listItem.duration.from} - {listItem.duration.to}
-                  </p>
+                  </div>
                 </div>
-              </div>
+                <ul className="pl-5 list-disc text-xs font-light text-medium opacity-50">
+                  {listItem.desc
+                    .split('\n')
+                    .map((descItem: string, index: number) => (
+                      <li className="my-1" key={index}>
+                        {descItem}
+                        <br />
+                      </li>
+                    ))}
+                </ul>
+              </React.Fragment>
             ))}
         </div>
       </div>
