@@ -7,8 +7,8 @@ import Image from 'next/image';
 import { UFrameType, UTileType } from './types';
 import { uuid } from 'uuidv4';
 import React from 'react';
-import Header from 'components/header';
 import { ListTile } from 'components/list-tile';
+import ProfileImage from '../../public/Harshal.jpg';
 
 export default function Home() {
   function tileDistribution(tileType: any, data: any) {
@@ -131,12 +131,14 @@ export default function Home() {
           <div className="w-full h-30 flex flex-col justify-center items-center">
             <div className="flex justify-center items-center w-28 h-28 rounded-xl">
               <Image
-                src={data.profile_img}
+                src={ProfileImage}
                 alt={data.name}
                 objectFit={'contain'}
+                placeholder="blur"
                 width={120}
                 height={120}
                 className="rounded-xl border border-high/50"
+                priority
               />
             </div>
             <h1 className="my-4 text-2xl md:text-3xl font-bold text-high">

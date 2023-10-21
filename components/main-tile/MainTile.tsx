@@ -95,7 +95,8 @@ const MainTile: React.FC<MainTileProps> = ({
               width={500}
               height={600}
               placeholder="empty"
-              objectFit="contain"
+              objectFit="cover"
+              priority
             />
           </div>
         )}
