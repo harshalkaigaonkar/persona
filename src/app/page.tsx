@@ -9,6 +9,7 @@ import { uuid } from 'uuidv4';
 import React from 'react';
 import { ListTile } from 'components/list-tile';
 import ProfileImage from '../../public/Harshal.jpg';
+import { Transition } from '@headlessui/react';
 
 export default function Home() {
   function tileDistribution(tileType: any, data: any) {
@@ -127,36 +128,58 @@ export default function Home() {
   return (
     <>
       <main className="w-full h-full">
-        <div className="mt-10 w-auto flex flex-col items-center ">
-          <div className="w-full h-30 flex flex-col justify-center items-center">
-            <div className="flex justify-center items-center w-28 h-28 rounded-xl">
-              <Image
-                src={ProfileImage}
-                alt={data.name}
-                objectFit={'contain'}
-                placeholder="blur"
-                width={120}
-                height={120}
-                className="rounded-xl border border-high/50"
-                priority
-              />
-            </div>
-            <h1 className="my-4 text-2xl md:text-3xl font-bold text-high">
-              {data.name}
-            </h1>
-            <h3 className="w-[90%] md:w-[50%] text-center my-2 text-xs md:text-sm font-medium text-medium">
-              {data.about}
-            </h3>
-          </div>
-          <div className="mt-2 p-1 lg:p-10 md:p-8 w-full max-w-[90%] md:max-w-[80%] h-full flex flex-col md:flex-row flex-wrap justify-evenly items-start gap-4">
-            {data.frames.map(({ frameType, data }: any, index: number) => (
-              <React.Fragment key={index}>
-                <FullFrame wrap>
-                  <>{frameDistribution(frameType, data)}</>
-                </FullFrame>
-              </React.Fragment>
-            ))}
-          </div>
+        <div className="w-auto flex flex-col items-center justify-center">
+          <Transition unmount appear show={true}>
+            <Transition.Child
+              as={React.Fragment}
+              enter="transition-all ease-linear duration-300 transform"
+              enterFrom="opacity-0 top-8"
+              enterTo="opacity-100 top-0"
+            >
+              <div className="pt-10 sticky top-0 w-full h-30 flex justify-center items-center">
+                <div className=" w-full h-full flex flex-col justify-center items-center ">
+                  <div className="flex justify-center items-center w-28 h-28 rounded-xl">
+                    <Image
+                      src={ProfileImage}
+                      alt={data.name}
+                      objectFit={'contain'}
+                      placeholder="blur"
+                      width={120}
+                      height={120}
+                      className="rounded-xl border border-high/50"
+                      priority
+                    />
+                  </div>
+                  <h1 className="my-4 text-2xl md:text-3xl font-bold text-high">
+                    {data.name}
+                  </h1>
+                  <h3 className="w-[90%] md:w-[50%] text-center my-2 text-xs md:text-sm font-medium text-medium">
+                    {data.about}
+                  </h3>
+                </div>
+              </div>
+            </Transition.Child>
+            <Transition.Child
+              appear
+              enter="transition-all ease-linear duration-300 delay-300 transform"
+              enterFrom="opacity-0 mt-10"
+              enterTo="opacity-100 mt-2"
+            >
+              <div className="w-full h-full flex justify-center items-center">
+                <div className="mt-2 p-1 lg:p-10 md:p-8 w-full max-w-[90%] md:max-w-[80%] h-full flex flex-col md:flex-row flex-wrap justify-evenly items-start gap-4">
+                  {data.frames.map(
+                    ({ frameType, data }: any, index: number) => (
+                      <React.Fragment key={index}>
+                        <FullFrame wrap>
+                          <>{frameDistribution(frameType, data)}</>
+                        </FullFrame>
+                      </React.Fragment>
+                    ),
+                  )}
+                </div>
+              </div>
+            </Transition.Child>
+          </Transition>
         </div>
       </main>
     </>

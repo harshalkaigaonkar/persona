@@ -26,20 +26,28 @@ const config: Config = {
         'base-3': 'rgb(var(--mono-base-3))',
         'primary': 'rgb(var(--primary))',
       },
-      keyframes: { // TODO: have to check the better way to show animations
+      keyframes: {
+        //Not a better way to use transition, using headless ui for this.
         enter: {
           '0%': {
-            'transform': 'translateY(1rem)',
+            'transform': 'translateY(30px)',
             'opacity': '0'
+          },
+          '50%': {
+            'transform': 'translateY(15px)',
+            'opacity': '0.5'
           },
           '100%': {
             'transform': 'translateY(0px)',
-            'opacity': '100'
+            'opacity': '1'
           }
         },
       },
       animation: {
-        "enter-div": "enter 0.5s linear",
+        "enter-div": "enter 0.3s linear",
+        "enter-div-del-100": "enter 0.3s linear 0.1s",
+        "enter-div-del-200": "enter 0.3s linear 0.2s",
+        "enter-div-del-300": "enter 0.3s linear 0.3s",
       }
     },
   },
