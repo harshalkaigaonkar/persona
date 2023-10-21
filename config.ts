@@ -223,9 +223,8 @@ export default {
                       from: "Feb 2022",
                       to: "Apr 2022"
                     },
-                    desc: "Developed an SSG Tool for Company to create documentation for their product providing better performance at scale and SEO Functionalities.
-                    }
-                  }
+                    desc: "Developed an SSG Tool for Company to create documentation for their product providing better performance at scale and SEO Functionalities.",
+                  },
                   // {
                   //   icon_media_link: '/projects/fplay-cover.png',
                   //   header: "Full Stack Intern",
