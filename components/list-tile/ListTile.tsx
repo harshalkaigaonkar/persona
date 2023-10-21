@@ -38,11 +38,8 @@ const ListTile: React.FC<ListTileProps> = (props) => {
         <div className="flex flex-col items-center gap-4">
           {!!list &&
             list.map((listItem: any, index: number) => (
-              <React.Fragment>
-                <div
-                  key={index}
-                  className="w-full h-auto flex flex-row flex-nowrap justify-between gap-4"
-                >
+              <React.Fragment key={index}>
+                <div className="w-full h-auto flex flex-row flex-nowrap justify-between gap-4">
                   <div className="w-10 h-10 flex justify-center items-center rounded-md">
                     <Image
                       src={listItem.icon_media_link}
@@ -83,12 +80,14 @@ const ListTile: React.FC<ListTileProps> = (props) => {
                   </div>
                 </div>
                 <ul className="pl-5 list-disc text-xs font-light text-medium opacity-50">
-                  {listItem.desc.split('\n').map((descItem: string) => (
-                    <li className="my-1">
-                      {descItem}
-                      <br />
-                    </li>
-                  ))}
+                  {listItem.desc
+                    .split('\n')
+                    .map((descItem: string, index: number) => (
+                      <li className="my-1" key={index}>
+                        {descItem}
+                        <br />
+                      </li>
+                    ))}
                 </ul>
               </React.Fragment>
             ))}
