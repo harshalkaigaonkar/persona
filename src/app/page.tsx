@@ -131,6 +131,7 @@ export default function Home() {
         <div className="w-auto flex flex-col items-center justify-center">
           <Transition unmount appear show={true}>
             <Transition.Child
+              appear
               as={React.Fragment}
               enter="transition-all ease-linear duration-300 transform"
               enterFrom="opacity-0 top-8"
