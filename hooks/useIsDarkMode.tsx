@@ -28,7 +28,7 @@ const useIsDarkMode = () => {
     document.documentElement?.setAttribute('data-theme', invertedTheme);
     setIsDark(invertedTheme === 'dark');
   }
-  console.log(isDark, 'isDark');
+  // console.log(isDark, 'isDark');
   return {
     isDark,
     setInvertTheme,
