@@ -149,7 +149,7 @@ export default function Home() {
     <>
       <main className="w-full h-full">
         <div className="w-auto flex flex-col items-center justify-center">
-          <Transition unmount appear show={true}>
+          <Transition appear show={true}>
             <Transition.Child
               appear
               as={React.Fragment}
