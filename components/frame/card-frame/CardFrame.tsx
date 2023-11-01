@@ -23,7 +23,11 @@ const CardFrame: React.FC<ICardFrameProps> = (props) => {
   return (
     <div
       key={key}
-      className="group relative overflow-hidden my-2 w-full h-auto bg-base-1 border border-base-3 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2 hover:bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-400 via-[rgba(0 0 0 / 0.7)] to-[rgba(0 0 0 / 0.7)]"
+      className={`group relative overflow-hidden my-2 w-full h-auto bg-base-1 border border-base-3 rounded-md cursor-pointer transition duration-200 hover:-translate-y-2 ${
+        showButton
+          ? 'bg-gradient-radial-purge-2 bg-right-top bg-no-repeat '
+          : ''
+      }`}
       onClick={(e: any) => {
         if (!!onRedirectHandler) onRedirectHandler(e);
       }}
@@ -33,16 +37,17 @@ const CardFrame: React.FC<ICardFrameProps> = (props) => {
       {/* Button Abs Content  */}
       {!!cta && (
         <Transition
-          appear
           show={!!showButton}
           as={React.Fragment}
-          enter="transition-all ease-in-out duration-100 origin-[50%_50%_10px] transform"
-          enterFrom="-right-5"
-          leave="transition-all ease-in-out duration-75 origin-[50%_50%_10px] transform"
-          leaveTo="-right-5"
+          enter="transition-all ease-in-out duration-[400] origin-[50%_50%_10px] transform"
+          enterFrom="-right-[100%]"
+          enterTo="right-4"
+          leave="transition-all ease-in-out duration-300 origin-[50%_50%_10px] transform"
+          leaveFrom="right-4"
+          leaveTo="-right-[100%]"
         >
-          <div className="absolute flex max-w-full top-0 right-0">
-            <div className="mt-3.5 mr-4">
+          <div className="absolute flex max-w-full top-3.5">
+            <div className="w-full h-auto">
               <button
                 name={typeof cta?.content === 'string' ? cta?.content : `icon`}
                 onClick={() => {}}

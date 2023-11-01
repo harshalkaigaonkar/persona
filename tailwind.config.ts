@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-radial-purge': "url('/bg-gradient.svg')",
+        'gradient-radial-purge-2': "url('/bg-gradient.png')",
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
