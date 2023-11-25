@@ -193,7 +193,7 @@ export default function Home() {
                 ref={tilesRef}
                 className="w-full h-full flex justify-center items-center"
               >
-                <div className="mt-2 p-1 lg:p-10 md:p-8 w-full max-w-[90%] md:max-w-[80%] h-full flex flex-col md:flex-row flex-wrap justify-evenly items-start gap-4 scroll-smooth">
+                <div className="mt-2 p-1 lg:p-10 md:p-8 w-full max-w-[90%] md:max-w-[1200px] h-full flex flex-col md:flex-row flex-wrap justify-evenly items-start gap-4 scroll-smooth">
                   {data.frames.map(
                     ({ frameType, data }: any, index: number) => (
                       <React.Fragment key={index}>
