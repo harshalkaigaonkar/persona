@@ -3,6 +3,7 @@ import React from 'react';
 import FigmaSvg from 'components/svgs/figma';
 import GithubSvg from 'components/svgs/github';
 import MailSvgIcon from 'components/svgs/mail';
+import LiveSvgIcon from 'components/svgs/live';
 
 const Links = ({
   attached_url,
@@ -24,6 +25,8 @@ const Links = ({
           <img className="rounded-md" src="/companies/x.png" alt="twitter_x" />
         ) : attached_url?.icon === 'mail' ? (
           <MailSvgIcon />
+        ) : attached_url?.icon === 'live' ? (
+          <LiveSvgIcon />
         ) : (
           <></>
         )}
