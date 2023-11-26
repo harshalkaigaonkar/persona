@@ -79,16 +79,18 @@ const ListTile: React.FC<ListTileProps> = (props) => {
                     </p>
                   </div>
                 </div>
-                <ul className="pl-5 list-disc text-xs font-light text-medium opacity-50">
-                  {listItem.desc
-                    .split('\n')
-                    .map((descItem: string, index: number) => (
-                      <li className="my-1" key={index}>
-                        {descItem}
-                        <br />
-                      </li>
-                    ))}
-                </ul>
+                {!!listItem.desc && (
+                  <ul className="pl-5 list-disc text-xs font-light text-medium opacity-50">
+                    {listItem.desc
+                      .split('\n')
+                      .map((descItem: string, index: number) => (
+                        <li className="my-1" key={index}>
+                          {descItem}
+                          <br />
+                        </li>
+                      ))}
+                  </ul>
+                )}
               </React.Fragment>
             ))}
         </div>
