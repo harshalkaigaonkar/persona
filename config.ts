@@ -125,8 +125,56 @@ export default {
       frameType: UFrameType.FULLFRAME,
       data: [
         {
-          frameType: UFrameType.HALFWIDTHFRAMEWITHROW,
+          frameType: UFrameType.HALFWIDTHFRAMEWITHCOL,
           data: [
+            {
+            frameType: UFrameType.HALFHEIGHTFRAMEWITHROW,
+            data: {
+              tileType: UTileType.MAINTILE,
+              data: {
+                header: 'Video Forms',
+                cta: {
+                  url: {
+                    link: 'https://dub.sh/video-forms',
+                    external: true,
+                  },
+                  content: 'Try it out!',
+                },
+                desc: "make your forms interactive and engaging with short videos which changes sequencially as you answer with answers analytics.",
+                tags: [
+                  {
+                    tag_content: "interaction 👀"
+                  },
+                  {
+                    tag_content: "Next.js ⚡︎"
+                  },
+                  {
+                    tag_content: "nifty little analytics ⚡︎"
+                  },
+                  {
+                    tag_content: "Prisma & Planetscale 🌎"
+                  },
+                ],
+                links: [
+                  {
+                    url: {
+                      link: 'https://dub.sh/video-forms',
+                      external: true,
+                      icon: 'live',
+                    },
+                    content: 'Try this 🤩',
+                  },
+                  {
+                    url: {
+                      link: 'https://github.com/harshalkaigaonkar/video-forms-next',
+                      external: true,
+                      icon: 'github',
+                    },
+                    content: 'Github',
+                  },
+                ],
+            }}
+          },
             {
             frameType: UFrameType.HALFHEIGHTFRAMEWITHROW,
             data: {
@@ -135,16 +183,16 @@ export default {
                 header: 'Email',
                 cta: {
                   url: {
-                    link: 'https://dub.sh/hk-mail',
+                    link: 'mailto:harshalkaigaonkar31@gmail.com',
                     external: true,
                   },
                   content: 'Shoot a mail',
                 },
-                desc: "Drop me an email if you like what you see! I'm currently open to meet some of the best ui developers.",
+                desc: "Drop me an email if you like what you see 👀! \n I'm always open to meet some of the best ui developers.",
                 links: [
                   {
                     url: {
-                      link: 'https://dub.sh/hk-mail',
+                      link: 'mailto:harshalkaigaonkar31@gmail.com',
                       external: true,
                       icon: 'mail',
                     },
@@ -164,7 +212,7 @@ export default {
               tileType: UTileType.LISTTILE,
               data: {
                 header: 'Experience',
-                desc: 'mostly internships ✌️',
+                desc: 'internships was the way to try out stuff for me ✌️.',
                 cta: {
                   url: {
                     link: "https://www.linkedin.com/in/harshal-kaigaonkar/#experience",
@@ -175,6 +223,19 @@ export default {
                 list_array: [
                   {
                     icon_media_link: '/companies/zuddl-logo.png',
+                    header: "Frontend Engineer",
+                    company: {
+                      name: "Zuddl",
+                      companyWebsiteUrl: "https://zuddl.com",
+                    },
+                    duration :{
+                      from: "Nov 2023",
+                      to: "Now"
+                    },
+                    desc: ""
+                  },
+                  {
+                    icon_media_link: '/companies/zuddl-logo.png',
                     header: "Frontend Engineering Intern",
                     company: {
                       name: "Zuddl",
@@ -182,7 +243,7 @@ export default {
                     },
                     duration :{
                       from: "Jul 2023",
-                      to: "Now"
+                      to: "Oct 2023"
                     },
                     desc: "Responsible for maintaining and developing features and fixes for the product. \n Contributed towards maintaining and developing components for the design system."
                   },
