@@ -164,7 +164,7 @@ export default {
               tileType: UTileType.LISTTILE,
               data: {
                 header: 'Experience',
-                desc: 'mostly internships ✌️',
+                desc: 'internships was the way to try out stuff for me ✌️.',
                 cta: {
                   url: {
                     link: "https://www.linkedin.com/in/harshal-kaigaonkar/#experience",
@@ -175,6 +175,19 @@ export default {
                 list_array: [
                   {
                     icon_media_link: '/companies/zuddl-logo.png',
+                    header: "Frontend Engineer",
+                    company: {
+                      name: "Zuddl",
+                      companyWebsiteUrl: "https://zuddl.com",
+                    },
+                    duration :{
+                      from: "Nov 2023",
+                      to: "Now"
+                    },
+                    desc: ""
+                  },
+                  {
+                    icon_media_link: '/companies/zuddl-logo.png',
                     header: "Frontend Engineering Intern",
                     company: {
                       name: "Zuddl",
@@ -182,7 +195,7 @@ export default {
                     },
                     duration :{
                       from: "Jul 2023",
-                      to: "Now"
+                      to: "Oct 2023"
                     },
                     desc: "Responsible for maintaining and developing features and fixes for the product. \n Contributed towards maintaining and developing components for the design system."
                   },
