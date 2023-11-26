@@ -135,16 +135,16 @@ export default {
                 header: 'Email',
                 cta: {
                   url: {
-                    link: 'https://dub.sh/hk-mail',
+                    link: 'mailto:harshalkaigaonkar31@gmail.com',
                     external: true,
                   },
                   content: 'Shoot a mail',
                 },
-                desc: "Drop me an email if you like what you see! I'm currently open to meet some of the best ui developers.",
+                desc: "Drop me an email if you like what you see 👀! \n I'm always open to meet some of the best ui developers.",
                 links: [
                   {
                     url: {
-                      link: 'https://dub.sh/hk-mail',
+                      link: 'mailto:harshalkaigaonkar31@gmail.com',
                       external: true,
                       icon: 'mail',
                     },
