@@ -135,10 +135,10 @@ export default {
                 header: 'Video Forms',
                 cta: {
                   url: {
-                    link: 'https://dub.sh/video-forms',
+                    link: 'https://github.com/harshalkaigaonkar/video-forms-next',
                     external: true,
                   },
-                  content: 'Try it out!',
+                  content: 'Go to github!',
                 },
                 desc: "make your forms interactive and engaging with short videos which changes sequencially as you answer with answers analytics.",
                 tags: [
@@ -156,22 +156,6 @@ export default {
                   },
                 ],
                 links: [
-                  {
-                    url: {
-                      link: 'https://dub.sh/video-forms',
-                      external: true,
-                      icon: 'live',
-                    },
-                    content: 'Try this 🤩',
-                  },
-                  {
-                    url: {
-                      link: 'https://github.com/harshalkaigaonkar/video-forms-next',
-                      external: true,
-                      icon: 'github',
-                    },
-                    content: 'Github',
-                  },
                 ],
             }}
           },
