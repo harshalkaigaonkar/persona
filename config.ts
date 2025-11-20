@@ -77,7 +77,7 @@ export default {
                       },
                       content: 'Say hi 👋',
                     },
-                    desc: '22 | here for reading twts | frontend @wearezuddl',
+                    desc: '23 | here for reading twts | frontend @wearezuddl',
                     links: [
                       {
                         url: {
